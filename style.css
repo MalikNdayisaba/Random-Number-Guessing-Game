@@ -1,0 +1,195 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #4cc9f0;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #e2e2e2;
+}
+
+#attempts {
+    font-weight: bold;
+    color: #f72585;
+    font-size: 1.4rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #4361ee;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin: 1.5rem 0;
+    text-align: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: #4cc9f0;
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+input[type="number"]::placeholder {
+    color: #a0a0a0;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#guessBtn {
+    background: linear-gradient(45deg, #4361ee, #3a0ca3);
+    color: white;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+}
+
+#guessBtn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.6);
+}
+
+#guessBtn:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+#restartBtn {
+    background: linear-gradient(45deg, #f72585, #b5179e);
+    color: white;
+    box-shadow: 0 4px 15px rgba(247, 37, 133, 0.4);
+}
+
+#restartBtn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(247, 37, 133, 0.6);
+}
+
+#restartBtn:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+#message {
+    min-height: 60px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 15px 25px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="number"] {
+        max-width: 100%;
+        padding: 12px 15px;
+    }
+
+    button {
+        padding: 12px 30px;
+        margin: 8px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    #message {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Animation for messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#message {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Remove arrows/spinners from number input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove number input arrows (spinners) */
+input[type="number"] {
+    appearance: textfield;
+    /* Standard */
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
